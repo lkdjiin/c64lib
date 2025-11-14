@@ -6,6 +6,12 @@ Assembly library for the Commodore 64 (KickAssembler format).
 
 "kernal.asm"
 
+## Macros
+
+All macros are in "macros.asm".
+
+ClearScreen()
+
 ## Routines
 
 ### Color
