@@ -3,7 +3,6 @@
 // A - The color code.
 //
 // Destroys Y.
-
 fill_text_color: {
   ldy #250
   loop:
@@ -14,4 +13,9 @@ fill_text_color: {
     sta COLOR_RAM + 750,y // 4th quarter
     bne loop              // All 250 bytes?
   rts
+}
+
+.macro FillTextColor(color) {
+  lda #color
+  jsr fill_text_color
 }

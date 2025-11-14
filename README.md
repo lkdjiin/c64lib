@@ -4,24 +4,31 @@ Assembly library for the Commodore 64 (KickAssembler format).
 
 ## Kernal
 
-"kernal.asm"
+In "kernal.asm".
 
 ## Macros
 
-All macros are in "macros.asm".
+Macros that don't pertain to a specific routine.
+Includes also all needed constants and kernal.
 
-ClearScreen()
+In "macros.asm"
+
+- **ClearScreen()**
+- **SetBlackBackground()**
 
 ## Routines
 
+A routine file can also include related macros.
+
 ### Color
-fill_text_color - "fill_text_color.asm"
-set_text_color - "set_text_color.asm"
+
+- **fill_text_color** "fill_text_color.asm"
+  - FillTextColor(color)
+- **set_text_color** "set_text_color.asm"
+  - SetYellowText()
 
 ### Random number
-rnd.init - "rnd.asm"
-rnd.range - [RandomRange(lo, hi)] - "rnd.asm"
 
-## Macros
-
-All macros are in the file "macros.asm".
+- **rnd.init** "rnd.asm"
+- **rnd.range** "rnd.asm"
+  - RandomRange(lo, hi)

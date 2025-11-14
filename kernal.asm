@@ -1,3 +1,6 @@
+#if !C64LIB_KERNAL_ASM
+#define C64LIB_KERNAL_ASM
+
 // Print a character at cursor position.
 //
 // A - The PETSCII character to print.
@@ -12,3 +15,5 @@
 //
 // Destroys A, X.
 .const GETIN = $ffe4
+
+#endif // !C64LIB_KERNAL_ASM
