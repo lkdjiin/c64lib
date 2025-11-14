@@ -3,5 +3,5 @@
 // A - The color code
 
 set_text_color:
-  sta CURRENT_COLOR
+  sta COLOR_CURRENT
   rts
