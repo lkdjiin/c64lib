@@ -15,6 +15,7 @@ In "macros.asm"
 
 - **ClearScreen()**
 - **SetBlackBackground()**
+- **SetSpriteProperty(key, value)**
 
 ## Routines
 

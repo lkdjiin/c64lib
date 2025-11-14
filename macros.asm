@@ -26,3 +26,19 @@
 .const SID_V3_CONTROL = $d412
 .const SID_VOLUME = $d418
 .const SID_V3_WAVE_OUT = $d41b
+
+// Sprites -------------------------------------------------------------
+.const SPRITES_ENABLE = $d015
+.const SPRITES_MULTICOLOR = $d01c
+.const SPRITES_COLOR1 = $d025
+.const SPRITES_COLOR2 = $d026
+.const SPRITE0_X = $d000
+.const SPRITE0_Y = $d001
+.const SPRITE0_COLOR = $d027
+.const SPRITE0_POINTER = $07f8
+
+.macro SetSpriteProperty(key, value)
+{
+  lda #value
+  sta key
+}
