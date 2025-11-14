@@ -1,4 +1,5 @@
-.const CURRENT_COLOR = $0286
+.const COLOR_BACKGROUND = $d021
+.const COLOR_CURRENT = $0286
 .const COLOR_RAM = $d800 // Base address of the color RAM for text
 
 // SID - Audio ---------------------------------------------------------
