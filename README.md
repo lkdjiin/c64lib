@@ -4,7 +4,7 @@ Assembly library for the Commodore 64 (KickAssembler format).
 
 ## Kernal
 
-In "kernal.asm".
+In "kernal.asm". Can also contain routines from BASIC ROM.
 
 ## Macros
 

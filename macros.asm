@@ -2,6 +2,8 @@
 
 // Character output ----------------------------------------------------
 
+.const VRAM = $0400
+
 // Clear the screen.
 //
 // Destroys A.
