@@ -23,6 +23,32 @@
   sta COLOR_BACKGROUND
 }
 
+// Screen --------------------------------------------------------------
+
+// Print a 16 bits integer at cursor location.
+//
+// address - Address of the 16 bits integer.
+//
+// Destroys A, X.
+.macro PrintWord(address) {
+  ldx address
+  lda address + 1
+  jsr LINPRT
+}
+
+// Move the cursor to a new position.
+//
+// col - 0 to 39
+// row - 0 to 24
+//
+// Destroys X, Y.
+.macro SetCursorPosition(col, row) {
+  ldx #row
+  ldy #col
+  clc
+  jsr PLOT
+}
+
 // SID - Audio ---------------------------------------------------------
 .const SID_V3_FREQ_HI = $d40f
 .const SID_V3_CONTROL = $d412

@@ -14,7 +14,9 @@ Includes also all needed constants and kernal.
 In "macros.asm"
 
 - **ClearScreen()**
+- **PrintWord(address)**
 - **SetBlackBackground()**
+- **SetCursorPosition(col, row)**
 - **SetSpriteProperty(key, value)**
 
 ## Routines
