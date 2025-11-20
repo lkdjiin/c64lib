@@ -1,5 +1,7 @@
 #import "./kernal.asm"
 
+.const JIFFY_LOW = $a2
+
 // Character output ----------------------------------------------------
 
 .const VRAM = $0400
@@ -54,6 +56,11 @@
 .const SID_V3_CONTROL = $d412
 .const SID_VOLUME = $d418
 .const SID_V3_WAVE_OUT = $d41b
+.const SID_V1_FREQUENCY_LOW = $d400
+.const SID_V1_FREQUENCY_HIGH = $d401
+.const SID_V1_CONTROL = $d404
+.const SID_V1_ATTACK_DECAY = $d405
+.const SID_V1_SUSTAIN_RELEASE = $d406
 
 // Sprites -------------------------------------------------------------
 .const SPRITES_ENABLE = $d015
