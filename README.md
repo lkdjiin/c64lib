@@ -14,6 +14,8 @@ Includes also all needed constants and kernal.
 In "macros.asm"
 
 - **ClearScreen()**
+- **Joystick_1_fire()**
+- **Joystick_2_fire()**
 - **PrintWord(address)**
 - **SetBlackBackground()**
 - **SetCursorPosition(col, row)**

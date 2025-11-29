@@ -25,6 +25,28 @@
   sta COLOR_BACKGROUND
 }
 
+// Input/output ports --------------------------------------------------
+.const JOYSTICK_2 = $dc00
+.const JOYSTICK_1 = $dc01
+
+// Is joystick 1 fire pressed?
+// Set zero flag if joystick's fire button is pressed.
+//
+// Destroys A.
+.macro Joystick_1_fire() {
+  lda JOYSTICK_1
+  and #%00010000
+}
+
+// Is joystick 2 fire pressed?
+// Set zero flag if joystick's fire button is pressed.
+//
+// Destroys A.
+.macro Joystick_2_fire() {
+  lda JOYSTICK_2
+  and #%00010000
+}
+
 // Screen --------------------------------------------------------------
 
 // Print a 16 bits integer at cursor location.
