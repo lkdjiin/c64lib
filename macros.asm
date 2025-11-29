@@ -5,6 +5,7 @@
 // Character output ----------------------------------------------------
 
 .const VRAM = $0400
+.const SCREEN_CONTROL = $d011
 
 // Clear the screen.
 //
@@ -12,6 +13,30 @@
 .macro ClearScreen() {
   lda #147
   jsr CHROUT
+}
+
+// Print a 16 bits integer at cursor location.
+//
+// address - Address of the 16 bits integer.
+//
+// Destroys A, X.
+.macro PrintWord(address) {
+  ldx address
+  lda address + 1
+  jsr LINPRT
+}
+
+// Move the cursor to a new position.
+//
+// col - 0 to 39
+// row - 0 to 24
+//
+// Destroys X, Y.
+.macro SetCursorPosition(col, row) {
+  ldx #row
+  ldy #col
+  clc
+  jsr PLOT
 }
 
 // Colors --------------------------------------------------------------
@@ -47,31 +72,14 @@
   and #%00010000
 }
 
-// Screen --------------------------------------------------------------
+// Interrupt -----------------------------------------------------------
 
-// Print a 16 bits integer at cursor location.
-//
-// address - Address of the 16 bits integer.
-//
-// Destroys A, X.
-.macro PrintWord(address) {
-  ldx address
-  lda address + 1
-  jsr LINPRT
-}
-
-// Move the cursor to a new position.
-//
-// col - 0 to 39
-// row - 0 to 24
-//
-// Destroys X, Y.
-.macro SetCursorPosition(col, row) {
-  ldx #row
-  ldy #col
-  clc
-  jsr PLOT
-}
+.const SYSTEM_IRQ_HANDLER = $ea31
+.const INTERRUPT_CONTROL_AND_STATUS = $dc0d
+.const INTERRUPT_STATUS = $d019
+.const INTERRUPT_CONTROL = $d01a
+.const RASTER_LINE = $d012 // Bits #0 to #7. There is a bit #8 into SCREEN_CONTROL
+.const INTERRUPT_SERVICE_ROUTINE_ADDRESS = $0314 // Low byte. High byte is at $0315
 
 // SID - Audio ---------------------------------------------------------
 .const SID_V3_FREQ_HI = $d40f
