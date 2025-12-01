@@ -1,6 +1,12 @@
 #import "./kernal.asm"
 
+// Constants to sort later ----------------------------------------------
 .const JIFFY_LOW = $a2
+.const SCREEN_CONTROL_2 = $d016
+.const MEMORY_SETUP = $d018
+.const EXTRA_COLOR_1 = $d022
+.const EXTRA_COLOR_2 = $d023
+.const BORDER = $d020
 
 // Character output ----------------------------------------------------
 
