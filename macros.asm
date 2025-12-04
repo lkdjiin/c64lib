@@ -47,13 +47,13 @@
 
 // Colors --------------------------------------------------------------
 
-.const COLOR_BACKGROUND = $d021
-.const COLOR_CURRENT = $0286
+.const BACKGROUND = $d021
+.const COLOR = $0286
 .const COLOR_RAM = $d800 // Base address of the color RAM for text
 
 .macro SetBlackBackground() {
   lda #BLACK
-  sta COLOR_BACKGROUND
+  sta BACKGROUND
 }
 
 // Input/output ports --------------------------------------------------
@@ -105,6 +105,7 @@
 .const SPRITES_EXTRA_COLOR_2 = $d026
 .const SPRITES_DOUBLE_WIDTH = $d01d
 .const SPRITES_DOUBLE_HEIGHT = $d017
+.const SPRITES_X_9TH_BIT = $d010
 .const SPRITE_0_X = $d000
 .const SPRITE_0_Y = $d001
 .const SPRITE_1_X = $d002

@@ -2,7 +2,7 @@
 //
 // A - The color code
 set_text_color:
-  sta COLOR_CURRENT
+  sta COLOR
   rts
 
 .macro SetYellowText() {
