@@ -64,7 +64,7 @@
 // Set zero flag if joystick's fire button is pressed.
 //
 // Destroys A.
-.macro Joystick_1_fire() {
+.macro Joystick1_fire() {
   lda JOYSTICK_1
   and #%00010000
 }
@@ -73,7 +73,7 @@
 // Set zero flag if joystick's fire button is pressed.
 //
 // Destroys A.
-.macro Joystick_2_fire() {
+.macro Joystick2_fire() {
   lda JOYSTICK_2
   and #%00010000
 }
