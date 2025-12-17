@@ -69,6 +69,26 @@
   and #%00010000
 }
 
+.macro Joystick1_Up() {
+  lda JOYSTICK_1
+  and #%00000001
+}
+
+.macro Joystick1_Down() {
+  lda JOYSTICK_1
+  and #%00000010
+}
+
+.macro Joystick1_Left() {
+  lda JOYSTICK_1
+  and #%00000100
+}
+
+.macro Joystick1_Right() {
+  lda JOYSTICK_1
+  and #%00001000
+}
+
 // Is joystick 2 fire pressed?
 // Set zero flag if joystick's fire button is pressed.
 //
@@ -78,6 +98,25 @@
   and #%00010000
 }
 
+.macro Joystick2_Up() {
+  lda JOYSTICK_2
+  and #%00000001
+}
+
+.macro Joystick2_Down() {
+  lda JOYSTICK_2
+  and #%00000010
+}
+
+.macro Joystick2_Left() {
+  lda JOYSTICK_2
+  and #%00000100
+}
+
+.macro Joystick2_Right() {
+  lda JOYSTICK_2
+  and #%00001000
+}
 // Interrupt -----------------------------------------------------------
 
 .const SYSTEM_IRQ_HANDLER = $ea31
